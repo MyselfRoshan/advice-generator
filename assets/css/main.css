@@ -1,0 +1,153 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Set core root defaults */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Blur images when they have no alt attribute */
+img:not([alt]) {
+  filter: blur(10px);
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*  */
+:root {
+  --light-cyan: hsl(193, 38%, 86%);
+  --neon-green: hsl(150, 100%, 66%);
+  --neon-green-light: hsl(150, 100%, 76%);
+  --grayish-blue: hsl(216, 19%, 38%);
+  --dark-grayish-blue: hsl(219, 19%, 24%);
+  --dark-blue: hsl(218, 23%, 16%);
+}
+
+body {
+  background-color: var(--dark-blue);
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--light-cyan);
+  display: grid;
+  place-items: center;
+}
+.flow * + * {
+  margin-top: var(--gap, 1em);
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--dark-grayish-blue);
+  box-shadow: 0rem 0rem 2.5rem rgba(0, 0, 0, 0.352);
+  text-align: center;
+  position: relative;
+  width: clamp(21rem, 45vw, 35.5rem);
+  border-radius: 15px;
+  padding: 3rem;
+}
+
+.card h1 {
+  font-size: clamp(0.8125rem, 5vw, 1rem);
+  text-transform: uppercase;
+  color: var(--neon-green);
+}
+
+.card-body {
+  font-size: clamp(1.35rem, 5vw, 1.75rem);
+  font-weight: 800;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 25ch;
+}
+
+picture {
+  --gap: 1.5em;
+  margin-top: 0rem !important;
+  margin-inline: min(0.1vw, 0.9rem);
+}
+#advice-toggler {
+  background-color: var(--neon-green);
+  border: none;
+  cursor: pointer;
+  padding: 1.2em;
+  border-radius: 50%;
+  position: absolute;
+  left: clamp(41.5%, 19.55vw, 44.5%);
+  bottom: -28px;
+}
+
+#advice-toggler:hover {
+  box-shadow: 0 0 1.5rem var(--neon-green-light);
+  scale: 1.05;
+}
